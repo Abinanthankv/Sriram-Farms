@@ -1,0 +1,420 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  overflow-y: auto;
+  overflow-x: auto;
+  background-color: var(--bg-color);
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: block;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: auto;
+  /* Firefox */
+}
+header {
+ background-color: var(--bg-color);
+  
+  padding: 0px;
+  transition: all 0.4s ease 0s;
+  height: 90px;
+  display: grid;
+  align-items: center;
+  top: 0;
+  margin: 0;
+  box-shadow: 0 3px 9px rgb(0 0 0 / 5%);
+}
+#nav-logo{
+  color:var(--logo-color);
+  display: flex;
+
+  
+}
+.nav-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--nav-color);
+  justify-content: space-around;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.menuitems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+}
+
+
+
+.menuitems li {
+  
+  padding: 10px;
+  list-style: none;
+}
+a:hover{
+  
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+  color: var(--secondary-color);
+}
+.hover-underline-animation {
+  
+  position: relative;
+  color: var(--font-color);
+}
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color:var(--secondary-color);
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+a {
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--primary-color);
+  padding: 6px 12px;
+  
+}
+a span{
+  font-size: 24px;
+  color: var(--secondary-color);
+}
+:root {
+  --primary-color: #000;
+  --secondary-color: #1fa12e;
+  --font-color: #696969;
+  --bg-color: #fff;
+  --heading-color: #111;
+  --logo-color: #041506;
+  --border-radius: 25px;
+  --border-radius-1: 6px;
+  --border-color: #ddd;
+  --border-light: #d9dad9;
+  --footer-bg: #000;
+  --footer-light: #111;
+  --nav-color: #292922;
+  --dropdown-color: #fff;
+  --bg-light: rgba(147, 107, 232, 0.05);
+  --bg-light1: rgba(255, 255, 255, 0.15);
+  --iframe-filter: grayscale(0%);
+  --widget-bg: #3f3a64;
+}
+[data-theme="dark"] {
+  --primary-color: #000;
+  --secondary-color: #1fa12e;
+  --font-color: #afafaf;
+  --bg-color: #000;
+  --heading-color: #fff;
+  --border-color: #4C5F67;
+  --border-light: #4C5F67;
+  --nav-color: #fff;
+  --logo-color: #fff;
+  --bg-light: #111;
+  --footer-light: #000;
+  --footer-bg: #111;
+  --dropdown-color: #000;
+  --bg-light1: rgba(0, 0, 0, 0.34);
+  --iframe-filter: grayscale(100%);
+  --widget-bg: #131617;
+  transition: 0.3s ease-in;
+}
+
+.switch_input{
+  opacity: 0;
+  position:absolute;
+}
+.label span{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+.label{
+  display: flex;
+  
+  align-items: center;
+  
+  height: 30px;
+  width:50px;
+  transition: 0.1s ease-in;
+  border-radius: 50px;
+  background-color:var(--bg-color)
+  
+}
+.switch{
+
+  height: 18px;
+  width: 20px;
+  border-radius: 50px;
+  
+}
+.dark{
+  transition: 0.2s ease-in;
+  color: black;
+  
+  
+}
+.dark:hover{
+  transition: 0.2s ease-in;
+  transform: rotate(40deg);
+ 
+}
+.light{
+  transition: 0.5s ease-in;
+  color:white;
+  
+}
+.light:hover{
+  
+  transition: 0.5s ease-in;
+  transform: rotate(40deg);
+}
+slideshow-container {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  margin: 0;
+}
+
+.slides {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+}
+
+.slides img {
+  height: 100vh;
+  width: 100vw;
+}
+
+
+
+#home,#gallery,#about,#services,#contact {
+  min-height: 100vh;
+  min-width: 100vw;
+ 
+  scroll-behavior: smooth;
+} 
+
+#home h2 {
+  color: white;
+  z-index: 100;
+  font-weight: 800;
+  top: 10px;
+  position: absolute;
+  left: 10px;
+  background: url(images/background.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+#gallery{
+ 
+
+  
+}
+#gallery h2{
+  color: var(--font-color);
+  z-index: 500;
+}
+
+
+
+#contact {
+
+
+  display: flex;
+
+  color: rgb(249 255 8);
+  background: url(images/background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
+
+
+
+
+}
+
+
+.cards {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  position: relative;
+  border-radius: 5px;
+  /* box-shadow: -5px 7px 5px 5px rgba(176, 164, 176, 1); */
+  transition: all .3s ease-in-out;
+}
+
+.contactcard {
+  display: flex;
+
+
+
+  position: relative;
+  border-radius: 5px;
+
+}
+
+.contactcard:hover {
+
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  backdrop-filter: blur(12px);
+
+}
+
+
+
+.image {
+  display: block;
+  height: 250px;
+  width: 250px;
+  border-radius: 8px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 35px;
+  color: black;
+  background: white;
+  transition: .5s ease;
+}
+
+.card:hover .overlay {
+  height: 23%;
+}
+
+.card-title {
+  font-weight: 400;
+  font-size: 20px;
+  color: black;
+  background: white;
+  padding: 4px 10px;
+}
+
+.card-content {
+  padding: 4px 10px;
+}
+.material-symbols-outlined{
+  color: black
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  /* Preferred icon size */
+  display: inline-block;
+  margin: 5px;
+  padding: 10px;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.contactcard {
+  display: flex;
+  margin: 70px;
+  padding: 90px;
+  flex-direction: column;
+
+}
+
+.maps {
+  z-index: 500;
+  margin-top: 70px;
+  height: 450px;
+
+
+
+
+}
+
+
+.email #email {
+  padding-top: 5px;
+  padding-left: 45px;
+
+}
+
+.address #location {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 45px;
+
+}
+
+.phone #phone {
+  padding-top: 5px;
+  padding-left: 45px;
+}
+
+.address a {
+
+  text-decoration: none;
+  padding-left: 45px;
+
+} 
+
